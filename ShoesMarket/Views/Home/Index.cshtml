@@ -1,0 +1,172 @@
+﻿@{
+    ViewData["Title"] = "Главная";
+}
+
+<div style="padding: 10px;"></div>
+@if (User.Identity.IsAuthenticated)
+{
+  <div class="card col-md-12">
+  <div class="card-body">
+    <h5 class="card-title text-center">Добро пожаловать на сайт ShoesMarket</h5>
+    <p class="card-text">
+      На этом сайте вы сможете выбрать подходящую для вас модель кроссовок, посмотреть их характеристики, сравнить
+      с другими моделями, а так же можете приобрести эти кроссовки
+    </p>
+  </div>
+</div>
+
+<div style="padding: 10px;"></div>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  @if (User.IsInRole("Admin"))
+  {
+    <div class="col">
+      <div class="card h-100">
+        <img src="https://assetmanagerpim-res.cloudinary.com/images/w_600/q_90/acdf879fc8054b63817aac32012d4c19_9366/FY7248_01_standard.jpg" class="card-img-top card-image"/>
+        <div class="card-body text-center">
+          <h5 class="card-title">Adidas</h5>
+          <p class="card-text">Adidas — немецкая компания, один из мировых лидеров производства спортивных товаров.</p>
+        </div>
+        <div class="card-footer text-center">
+          <a asp-controller="Shoes" asp-action="GetShoeses" class="card-link">Список обуви</a>
+        </div>
+      </div>
+    </div> 
+  }
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/fliho8ygw5nogbmtcbft/air-vapormax-plus-mens-shoes-nC0dzF.jpg" class="card-img-top card-image"/>
+      <div class="card-body text-center">
+        <h5 class="card-title">Nike</h5>
+        <p class="card-text">
+          Nike — американская компания, производитель спортивных товаров.
+        </p>
+      </div>
+      <div class="card-footer text-center">
+        <a asp-controller="Shoes" asp-action="GetShoeses" class="card-link">Список обуви</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://img.eobuwie.cloud/eob_product_128w_128h(1/d/e/b/1deb43b8122019f1e6601a425c036e7b0bd02f71_0000209754803_01_rz.jpg,webp)/vzuttia-puma-incinerate-376288-01-puma-black-puma-white.jpg" class="card-img-top card-image"/>
+      <div class="card-body text-center">
+        <h5 class="card-title">Puma</h5>
+        <p class="card-text">Puma — немецкая компания - один из мировых лидеров производства спортивных товаров.</p>
+      </div>
+      <div class="card-footer text-center">
+        <a asp-controller="Shoes" asp-action="GetShoeses" class="card-link">Список обуви</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding: 10px;"></div>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Основные типы обуви</h5>
+    <p class="card-text">
+      Наиболее значимый признак классификации обуви — её вид. 
+      На нашем сайте таких классификаций множество, а поэтому мы можем предоставить Вам широкий спектр типов обуви, таких как:
+      - для бега;
+      - для фитнеса;
+      - для баскетбола;
+      - для футбола;
+      - для зала;
+      - для тенниса;
+      - для спринтеров;
+      - для активного отдыха и туризма;
+    </p>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+
+<div style="padding: 10px;"></div>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Наибольшим спросом пользуется спортивная обувь. Классификация спортивной обуви по виду верха:</h5>
+  </div>
+  <ul class="list-group list-group-flush" id="ulListId">
+    <li class="list-group-item">Кроссовки – кожаная и замшевая обувь на шнуровке для профессионального спорта, физических нагрузок и повседневной ходьбы. 
+        Главное преимущество – толстая рельефная подошва с амортизирующими вставками в виде пружин, подушек. 
+        Часто присутствует характерный резиновый «носок». Кроссовки еще называют модернизированным видом кед.</li>
+    <li class="list-group-item">Кеды – спортивная обувь на шнуровке. Подошва – вулканизированная резина. 
+        Материал верха – искусственная/натуральная кожа, замша. Сегодня активно носится в стиле casual.</li>
+    <li class="list-group-item">Сникерсы – мужская/женская спортивная обувь с текстильным либо кожаным верхом, на шнуровке. 
+        Нечто среднее между кроссовками и кедами. Оснащена гибкой резиновой подошвой. 
+        Это может быть как ровная невысокая платформа, так и завышенная танкетка в модных женских вариантах.</li>
+    <li class="list-group-item">Слипоны – женские/мужские кеды без шнуровки. Верх из хлопка, парусины, натуральной/искусственной кожи, замши. 
+        Резинки в центре или по бокам. Широкая колодка. Плотная, но отлично гнущаяся резиновая подошва, в основном белого цвета. 
+        Но встречаются модели с подошвой других цветов и даже рисунков.</li>
+  </ul>
+  <div class="card-body">
+    <button class="btn btn-danger" id="btnHideId">Скрыть</button>
+    <button class="btn btn-primary" id="btnShowId">Показать</button>
+  </div>
+</div>
+}
+else
+{
+  <div class="card">
+    <div class="card-header">
+      Вы не авторизовались
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>Для просмотра контента вы должны авторизоваться</p>
+      </blockquote>
+    </div>
+  </div>
+  
+  <div style="padding: 10px;"></div>
+  
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card h-100">
+        <img src="~/img/Nike.jpg" class="card-img-top" alt="Nike Revolution 6">
+        <div class="card-body">
+          <h5 class="card-title text-center">Недоступно</h5>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Nike Revolution 6</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="~/img/Adidas.jpg" class="card-img-top" alt="Adidas 1">
+        <div class="card-body">
+          <h5 class="card-title text-center">Недоступно</h5>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Adidas 1</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="~/img/Puma.jpg" class="card-img-top" alt="Puma 2">
+        <div class="card-body">
+          <h5 class="card-title text-center">Недоступно</h5>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Puma 2</small>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+
+@section pageScripts
+{
+    <script>
+    
+    $('#btnHideId').click(function(){
+      $('#ulListId').hide(2000);
+    });
+    
+    $('#btnShowId').click(function () {
+      $('#ulListId').show(2000);
+    });
+  </script>
+}
